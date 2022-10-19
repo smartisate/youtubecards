@@ -1,95 +1,71 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import Categories from '../components/categories';
+import Container from '../components/container';
 
 const Index = (props) => {
+
+  const shortVideos = [
+    {
+      title:"Video title 1",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    },
+    {
+      title:"Video title 2",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    },
+    {
+      title:"Video title 3",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    },
+    {
+      title:"Video title 4",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    },
+    {
+      title:"Video title 5",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    },
+    {
+      title:"Video title 6",
+      short_video:"https://semantic-ui.com/images/wireframe/image.png",
+      last_viewed:"Last updated 3 mins ago"
+    }
+  ];
+
   return (    
-    <div>
-      <Head>
-        <title>Next.js Project</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
-      </Head>
-    
-      <div className="container-fluid">
-
-        <div>
-          <i className="bi-youtube" style={{ fontSize: 30 }} />          
-          youtube
-        </div>
-
+    <div>      
+      <Container>
+        <hr/>
+        <Categories/>
+        <hr/>
         <div className="card-deck">
-
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
+          {
+            shortVideos.map(el => (
+            <div className="card">
+                <Link href="/detail">
+                  <a>
+                    <img className="card-img-top" src={el.short_video} alt="Card image cap" />
+                  </a>
+                </Link>
+                <div className="card-body">
+                  <h5 className="card-title">{el.title}</h5>              
+                  <p className="card-text">
+                    <small className="text-muted">{el.last_viewed}</small>
+                  </p>
+                </div>
             </div>
-          </div>
-
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-
-          <div className="card">
-            <img className="card-img-top" src="https://semantic-ui.com/images/wireframe/image.png" alt="Card image cap" />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>              
-              <p className="card-text">
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-
-
+            ))
+          }
         </div>
-
-
-      </div>      
+      </Container>
     </div>
   );
 }
-
 
 export default Index
