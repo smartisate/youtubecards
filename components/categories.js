@@ -29,8 +29,8 @@ const Categories = () => {
     <div className="d-flex justify-content-center">
       {
         categories.map(el => (
-          <div className="p-1">
-            <button type="button" class={`btn btn-light`}>{el.title}</button>
+          <div className="p-1" key={el.id}>
+            <button type="button" className={`btn btn-light`}>{el.title}</button>
           </div>
 
         ))

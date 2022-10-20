@@ -11,10 +11,10 @@ const Search = () => {
             aria-label="Search"
           />
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-            <i class="bi bi-search"></i>            
+            <i className="bi bi-search"></i>            
           </button>
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-            <i class="bi bi-mic-fill"></i>
+            <i className="bi bi-mic-fill"></i>
           </button>
         </form>
     </div>
