@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Categories from '../components/categories';
-import Container from '../components/container';
+import Categories from '../components/Categories';
+import Container from '../components/Container';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -67,13 +67,13 @@ const Index = (props) => {
         <hr/>
         <Categories/>
         <hr/>
-        <div className="row justify-content-center">
+        <div className="d-flex justify-content-center flex-wrap">
           {
             shortVideos.map(el => (
-            <div className="card col-2 border-light" key={el.id}>
+            <div className="card yc-card" key={el.id}>
                 <Link href="/detail">
-                  <a>
-                    <img className="card-img-top" src={el.short_video} alt="Card image cap" />
+                  <a className='yc-card-video-container'>
+                    <img className="card-img-top yc-card-video" src={el.short_video} alt="Card image cap" />
                   </a>
                 </Link>
                 <div className="card-body">

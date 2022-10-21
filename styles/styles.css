@@ -1,0 +1,54 @@
+:root{
+  --color-text:#030303;
+}
+
+.yc-card{
+  border:none !important;  
+  margin: 5px;
+}
+
+.yc-card-video-container{
+  width: 360px;
+  height: 120px;
+  display: block;
+}
+
+.yc-card-video{
+  width:100%;
+  height:100%;  
+}
+
+
+.yc-icon-search{
+  font-size: 12px;
+}
+
+.yc-search-items{  
+  height: 40px !important;
+}
+
+.yc-logo-container{
+  padding-left: 16px;
+  padding-right: 14px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  flex:none;
+}
+
+.yc-logo-items{
+
+}
+.yc-logo-part-country{
+  margin:12px 0 0 -10px;
+  color:var(--color-text);
+  font-size: 10px;  
+}
+#yc-logo-link{
+  text-decoration: none !important;
+}
+
+.left-sidebar-button-link{
+  font-size: 9px !important;
+  text-decoration: none !important;  
+  width: 50px;
+}
