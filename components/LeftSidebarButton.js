@@ -1,12 +1,9 @@
 import Link from 'next/link';
-
-const LeftSidebarButton = ({title, url}) => {
+const LeftSidebarButton = ({title}) => {
   return (
-    <Link className="" href={url}>
-      <a className="left-sidebar-button-link">
-          {title}
-      </a>
-    </Link>
+    <div>
+      {title}
+    </div>
   );
 }
 

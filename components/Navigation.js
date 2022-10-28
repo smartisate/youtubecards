@@ -6,15 +6,15 @@ import Image from 'next/image';
 
 const Navigation = () => {
   return (
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-between ycNavigationContainer">
 
         <Link href="/">
-          <a id="yc-logo-link">
-            <div className='d-flex justify-content-center yc-logo-items'>
-              <div className='yc-logo-container'>
+          <a id="ycLogoLink">
+            <div className='d-flex justify-content-center ycLogoContainer'>
+              <div className='ycLogoContent'>
                 <Image src='/logo.svg' width={90} height={20}/>
               </div>
-              <div className='yc-logo-part-country'>BO</div>
+              <div className='ycLogoPartCountry'>BO</div>
             </div>
           </a>
         </Link>

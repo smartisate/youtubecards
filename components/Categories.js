@@ -1,8 +1,23 @@
 import Link from 'next/link';
 
-const Categories = () => {
+const Categories = ({categories}) => {
+  
+  return (
+    <div className="d-flex justify-content-center">
+      {
+        categories.map(el => (
+          <div className="p-1" key={el.id}>
+            <button type="button" className={`btn btn-light`}>{el.title}</button>
+          </div>
 
-  const categories = [
+        ))
+      }
+    </div>
+  );
+}
+
+Categories.defaultProps = {
+  categories: [
     {
       id:1,
       title:"Todos",
@@ -23,20 +38,7 @@ const Categories = () => {
       id:5,
       title:"Música",
     },    
-  ];
-
-  return (
-    <div className="d-flex justify-content-center">
-      {
-        categories.map(el => (
-          <div className="p-1" key={el.id}>
-            <button type="button" className={`btn btn-light`}>{el.title}</button>
-          </div>
-
-        ))
-      }
-    </div>
-  );
-}
+  ]
+};
 
 export default Categories;

@@ -1,15 +1,43 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Categories from '../components/Categories';
-import Container from '../components/Container';
+import Layout from '../components/Layout';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+const Index = ({shortVideos}) => {
+
+  return (    
+    <div>      
+      <Layout>
+        <hr/>
+        <Categories/>
+        <hr/>
+        <div className="d-flex justify-content-center flex-wrap">
+          {
+            shortVideos.map(el => (
+            <div className="card ycCard" key={el.id}>
+                <Link href="/detail">
+                  <a className="ycCardVideoContent">
+                    <img className="card-img-top ycCardVideo" src={el.short_video} alt="Card image cap" />
+                  </a>
+                </Link>
+                <div className="card-body">
+                  <h5 className="card-title">{el.title}</h5>              
+                  <p className="card-text">
+                    <small className="text-muted">{el.last_viewed}</small>
+                  </p>
+                </div>
+            </div>
+            ))
+          }
+        </div>
+      </Layout>
+    </div>
+  );
+}
 
 
-const Index = (props) => {
-
-  const shortVideos = [
+Index.defaultProps = {
+  shortVideos: [
     {
       id:1,
       title:"Video title 1",
@@ -58,37 +86,7 @@ const Index = (props) => {
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
       last_viewed:"Last updated 3 mins ago"
     }
-
-  ];
-
-  return (    
-    <div>      
-      <Container>
-        <hr/>
-        <Categories/>
-        <hr/>
-        <div className="d-flex justify-content-center flex-wrap">
-          {
-            shortVideos.map(el => (
-            <div className="card yc-card" key={el.id}>
-                <Link href="/detail">
-                  <a className='yc-card-video-container'>
-                    <img className="card-img-top yc-card-video" src={el.short_video} alt="Card image cap" />
-                  </a>
-                </Link>
-                <div className="card-body">
-                  <h5 className="card-title">{el.title}</h5>              
-                  <p className="card-text">
-                    <small className="text-muted">{el.last_viewed}</small>
-                  </p>
-                </div>
-            </div>
-            ))
-          }
-        </div>
-      </Container>
-    </div>
-  );
-}
+  ]
+};
 
 export default Index
