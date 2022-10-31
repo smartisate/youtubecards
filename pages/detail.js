@@ -9,7 +9,7 @@ const Index = (props) => {
         <div className='d-flex justify-content-center'>
           <div>
             <div>
-              <img src="https://semantic-ui.com/images/wireframe/image.png" class="img-fluid" alt="Responsive image"/>
+              <img src="https://semantic-ui.com/images/wireframe/image.png" className="img-fluid" alt="Responsive image"/>
             </div>
           </div>
           <div>

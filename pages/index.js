@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import Categories from '../components/Categories';
 import Layout from '../components/Layout';
@@ -7,17 +8,17 @@ const Index = ({shortVideos}) => {
 
   return (    
     <div>      
-      <Layout>
-        <hr/>
-        <Categories/>
-        <hr/>
+      <Layout>        
+        <Categories/>        
         <div className="d-flex justify-content-center flex-wrap">
           {
             shortVideos.map(el => (
             <div className="card ycCard" key={el.id}>
                 <Link href="/detail">
                   <a className="ycCardVideoContent">
-                    <img className="card-img-top ycCardVideo" src={el.short_video} alt="Card image cap" />
+                    
+                    <img className="img-responsive ycCardVideo" src={el.short_video}/>
+                    
                   </a>
                 </Link>
                 <div className="card-body">

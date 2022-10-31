@@ -6,22 +6,27 @@ import Image from 'next/image';
 
 const Navigation = () => {
   return (
-    <div className="d-flex justify-content-between ycNavigationContainer">
-
-        <Link href="/">
-          <a id="ycLogoLink">
-            <div className='d-flex justify-content-center ycLogoContainer'>
+    <div className="ycNavigationContainer">        
+      <div className="ycHamburderLogoCantainer">
+        <button className="ycHamburgerIconContainer">
+          <i className="bi bi-menu-down ycHamburgerMenu"></i>
+        </button>
+        <div className="ycLogoContainer">
+          <Link href="/">
+            <a className="ycLogoLink">
               <div className='ycLogoContent'>
-                <Image src='/logo.svg' width={90} height={20}/>
+                <img src='/logo.svg' layout={'fixed'} width={90} height={20} className="ycLogoImage"/>                
               </div>
               <div className='ycLogoPartCountry'>BO</div>
-            </div>
-          </a>
-        </Link>
+            </a>
+          </Link>
+        </div>
+      </div>
+      
 
-        <Search/>
+      <Search/>
 
-        <User/>
+      <User/>
     </div>
   );
 }

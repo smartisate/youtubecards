@@ -1,42 +1,165 @@
 :root{
   --color-text:#030303;
+  --ytd-searchbox-legacy-button-color: #f8f8f8;
+  --ytd-searchbox-legacy-button-border-color: #d3d3d3;
+  --yt-spec-badge-chip-background: rgba(0, 0, 0, 0.05);
 }
 
 .ycNavigationContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height:56px;
   padding-left: 16px;
   padding-right: 16px;
-  height:56px
+  position:sticky;
+  top:1px;
+  z-index: 1;
+  background-color: white;
 }
-
-.ycSearchItems{  
-  height: 40px !important;
+.ycHamburderLogoCantainer{
+  display: flex;
 }
 
 .ycLogoContainer{
-  padding-left: 16px;
-  padding-right: 14px;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  flex:none;
+  display:flex;
+  justify-content: center;  
 }
 
-.ycLogoPartCountry{
-  margin-left:12px;
+.ycLogoLink{  
+  text-decoration: none !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ycLogoContent{  
+  justify-content: center;
+  padding-left: 16px;
+  padding-right: 0px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  min-width: 90px !important;
+  min-height: 20px !important;
+}
+
+.ycLogoImage{
+  
+}
+
+.ycHamburgerIconContainer{
+  padding: 8px;
+  border: none;
+  background: none;
+}
+
+.ycHamburgerMenu{
+  font-size: 24px;
+}
+
+.ycLogoPartCountry{  
+  margin-left:2px;
   margin-right: 10px;
   margin-top: 0px;
-  margin-bottom: 0px;
-  
+  margin-bottom: 0px;  
   color:var(--color-text);
-  font-size: 10px;  
+  font-size: 10px;
+
+  padding-top: 10px;
+  
 }
-#ycLogoLink{
-  text-decoration: none !important;
+
+.ycSearchContainer{
+  display:flex;
+  justify-content: center;  
 }
+
+.ycSearchItem{
+  
+  height: 40px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  
+  margin-right: 5px;
+  background-color: transparent;
+}
+
+#ycBtnSearchItemSubtitle{
+  min-width: 36px;
+  
+  display: block;
+  
+  margin-left:4px;
+  margin-right:4px;
+
+  border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+
+  background-position: 7px;
+  background-image: url('/search_by_subtitle.svg');
+  background-size: 22px 36px;
+  background-repeat: no-repeat;
+}
+
+
+#ycBtnSearchItemLegacy{
+  min-width: 64px;
+  border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  background-color: var(--ytd-searchbox-legacy-button-color);
+}
+#ycBtnSearchItemVoice{
+  width: 40px;
+  border-radius: 40px;
+  border: 1px solid var(--ytd-searchbox-legacy-button-color);
+  background-color: var(--ytd-searchbox-legacy-button-color);
+}
+
+
+.ycUserOptionsContainer{
+  display:flex;
+  justify-content: center;  
+}
+
+
+
+.ydUserOptionsIcon{
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  border: none !important;
+}
+
+
+
+
+
 
 .leftSidebarButtonLink{
   font-size: 9px !important;
   text-decoration: none !important;  
   width: 50px;
+}
+
+#categoriesContainer{
+  border-top: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  border-bottom: 1px solid var(--ytd-searchbox-legacy-button-border-color);  
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-top: 10px;
+  position: sticky;
+  top: 65px;
+  z-index: 1;
+  background-color: white;
+}
+.ycCategory{
+  margin-top: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 15px;
+  border-color: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  background-color: var(--yt-spec-badge-chip-background);
 }
 
 .ycCard{
@@ -46,8 +169,7 @@
 
 .ycCardVideoContent{
   width: 360px;
-  height: 120px;
-  display: block;
+  height: 120px;  
 }
 
 .ycCardVideo{
