@@ -3,6 +3,9 @@
   --ytd-searchbox-legacy-button-color: #f8f8f8;
   --ytd-searchbox-legacy-button-border-color: #d3d3d3;
   --yt-spec-badge-chip-background: rgba(0, 0, 0, 0.05);
+  --ytd-mini-guide-width:120px;
+  --yc-top-position-sticky:56px;
+  --yc-main-content-background-color:#f9f9f9;
 }
 
 .ycNavigationContainer{
@@ -14,7 +17,7 @@
   padding-left: 16px;
   padding-right: 16px;
   position:sticky;
-  top:1px;
+  top:0px;
   z-index: 1;
   background-color: white;
 }
@@ -84,16 +87,41 @@
   background-color: transparent;
 }
 
+#searchInput{
+  border-radius: 0px !important;
+  width: 409px;
+  
+  margin-right: 0px !important;
+}
+
+#ycBtnSearchTranslate{
+  min-width: 36px;
+  display: block;
+  border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  background-position: 7px;
+  background-image: url('/translate_icon.svg');
+  background-size: 22px 36px;
+  background-repeat: no-repeat;
+  margin: 0px !important;
+}
+
+#ycBtnSearchTranslateArrowDown{
+  min-width: 15px;
+  display: block;
+  border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  background-position: -3px;
+  background-image: url('/arrow_down.svg');
+  background-repeat: no-repeat;
+  padding: 0px !important;
+  margin-right: 0px !important;
+}
+
 #ycBtnSearchItemSubtitle{
   min-width: 36px;
-  
-  display: block;
-  
+  display: block;  
   margin-left:4px;
   margin-right:4px;
-
   border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
-
   background-position: 7px;
   background-image: url('/search_by_subtitle.svg');
   background-size: 22px 36px;
@@ -127,17 +155,31 @@
   height: 40px;
   margin-right: 8px;
   border: none !important;
+  color: black !important;
 }
 
 
+#sidebarAndSectionsContainer{
+  display: flex;
+}
 
+#sidebarAndSectionsContainer #sidebarLeft{
+  display: flex;
+  flex-direction: column;  
+  position: sticky;
+  
+  top: var(--yc-top-position-sticky);
+  z-index: 1;
+  background-color: aquamarine;
+}
 
-
-
-.leftSidebarButtonLink{
-  font-size: 9px !important;
-  text-decoration: none !important;  
-  width: 50px;
+.leftSidebarButton{
+  font-size: 10px !important;
+  text-decoration: none !important;
+  width: 72px;
+  height: 74px;
+  border: none;
+  background-color: white;
 }
 
 #categoriesContainer{
@@ -145,11 +187,18 @@
   border-bottom: 1px solid var(--ytd-searchbox-legacy-button-border-color);  
   padding-top: 7px;
   padding-bottom: 7px;
-  margin-top: 10px;
+  
   position: sticky;
-  top: 65px;
+  top: var(--yc-top-position-sticky);
   z-index: 1;
   background-color: white;
+  
+
+  display: flex;
+  justify-content:center;
+}
+#categoriesContainer > div {
+  
 }
 .ycCategory{
   margin-top: 12px;
@@ -158,18 +207,32 @@
   padding-left: 12px;
   padding-right: 12px;
   border-radius: 15px;
-  border-color: 1px solid var(--ytd-searchbox-legacy-button-border-color);
-  background-color: var(--yt-spec-badge-chip-background);
+  border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  background-color: var(--yt-spec-badge-chip-background);  
+  white-space: nowrap;  
+}
+
+#mainContainer{
+  display: flex;
+  background-color:var(--yc-main-content-background-color);
+}
+#mainContainerVideos{
+  margin-top: 24px;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .ycCard{
+  display:flex;
+  flex-direction: column;
   border:none !important;  
   margin: 5px;
 }
 
 .ycCardVideoContent{
   width: 360px;
-  height: 120px;  
+  height: 120px;
 }
 
 .ycCardVideo{
@@ -180,4 +243,10 @@
 
 .ycIconSearch{
   font-size: 12px;
+}
+
+main{
+  display:flex;
+  flex-direction: column;
+  align-content: stretch;
 }

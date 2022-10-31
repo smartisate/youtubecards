@@ -9,7 +9,7 @@ const Navigation = () => {
     <div className="ycNavigationContainer">        
       <div className="ycHamburderLogoCantainer">
         <button className="ycHamburgerIconContainer">
-          <i className="bi bi-menu-down ycHamburgerMenu"></i>
+          <i className="bi bi-menu-down ycHamburgerMenu"></i>          
         </button>
         <div className="ycLogoContainer">
           <Link href="/">

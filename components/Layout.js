@@ -11,20 +11,23 @@ const Layout = (props) => {
       <Head>
         <title>Youtube Cards</title>        
       </Head>
-      <Navigation/>
-      <div className='d-flex'>
-        <div className='d-flex justify-content-center'>
-            <div className='d-flex flex-column'>
+
+      <main>
+        <Navigation/>
+        <div id="sidebarAndSectionsContainer">
+          <div>
+            <div id='sidebarLeft'>            
               <LeftSidebarButton title="Principal" url="/"/>
               <LeftSidebarButton title="Shorts" url="/"/>
               <LeftSidebarButton title="Suscripciones" url="/"/>
               <LeftSidebarButton title="Biblioteca" url="/"/>
-            </div>        
+            </div>
+          </div>
+          <div>
+            {props.children}
+          </div>
         </div>
-        <div>
-          {props.children}
-        </div>
-      </div>  
+      </main>
     </>
   )
 };

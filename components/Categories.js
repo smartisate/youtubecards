@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Categories = ({categories}) => {
   
   return (
-    <div id="categoriesContainer" className="d-flex justify-content-center">
+    <div id="categoriesContainer">
       {
         categories.map(el => (
           <div key={el.id}>
@@ -37,8 +37,50 @@ Categories.defaultProps = {
     {
       id:5,
       title:"Música",
+    },
+    {
+      id:6,
+      title:"Soundtracks",
+    },
+    {
+      id:7,
+      title:"Thoughts",
+    },
+    {
+      id:8,
+      title:"Vocabulary",
     },    
+    {
+      id:9,
+      title:"Piano",
+    },
+    {
+      id:10,
+      title:"Live",
+    },
   ]
 };
+
+/*
+{
+  id:6,
+  title:"Soundtracks",
+},
+{
+  id:7,
+  title:"Thoughts",
+},
+{
+  id:8,
+  title:"Vocabulary",
+},    
+{
+  id:9,
+  title:"Piano",
+},
+{
+  id:10,
+  title:"Live",
+}, */
 
 export default Categories;

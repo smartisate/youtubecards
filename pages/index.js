@@ -7,13 +7,14 @@ import Layout from '../components/Layout';
 const Index = ({shortVideos}) => {
 
   return (    
-    <div>      
+    <>
       <Layout>        
         <Categories/>        
-        <div className="d-flex justify-content-center flex-wrap">
+        <div id="mainContainer">
+          <div id="mainContainerVideos">
           {
             shortVideos.map(el => (
-            <div className="card ycCard" key={el.id}>
+            <section className="ycCard" key={el.id}>
                 <Link href="/detail">
                   <a className="ycCardVideoContent">
                     
@@ -27,12 +28,13 @@ const Index = ({shortVideos}) => {
                     <small className="text-muted">{el.last_viewed}</small>
                   </p>
                 </div>
-            </div>
+            </section>
             ))
           }
+          </div>
         </div>
       </Layout>
-    </div>
+    </>
   );
 }
 

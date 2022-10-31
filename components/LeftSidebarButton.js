@@ -1,9 +1,9 @@
 import Link from 'next/link';
 const LeftSidebarButton = ({title}) => {
   return (
-    <div>
+    <button className='leftSidebarButton'>
       {title}
-    </div>
+    </button>
   );
 }
 
