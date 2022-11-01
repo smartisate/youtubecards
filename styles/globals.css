@@ -1,11 +1,12 @@
 :root{
-  --color-text:#030303;
+  --yc-main-primary-text-color:#030303;
   --ytd-searchbox-legacy-button-color: #f8f8f8;
   --ytd-searchbox-legacy-button-border-color: #d3d3d3;
   --yt-spec-badge-chip-background: rgba(0, 0, 0, 0.05);
   --ytd-mini-guide-width:120px;
   --yc-top-position-sticky:56px;
   --yc-main-content-background-color:#f9f9f9;
+  --yc-main-secondary-text-color:#6c757d;
 }
 
 .ycNavigationContainer{
@@ -65,7 +66,7 @@
   margin-right: 10px;
   margin-top: 0px;
   margin-bottom: 0px;  
-  color:var(--color-text);
+  color:var(--yc-main-primary-text-color);
   font-size: 10px;
 
   padding-top: 10px;
@@ -141,6 +142,10 @@
   background-color: var(--ytd-searchbox-legacy-button-color);
 }
 
+.ycIconSearch{
+  font-size: 12px;
+}
+
 
 .ycUserOptionsContainer{
   display:flex;
@@ -212,6 +217,11 @@
   white-space: nowrap;  
 }
 
+main{
+  display:flex;
+  flex-direction: column;
+  align-content: stretch;
+}
 #mainContainer{
   display: flex;
   background-color:var(--yc-main-content-background-color);
@@ -227,26 +237,55 @@
   display:flex;
   flex-direction: column;
   border:none !important;  
-  margin: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 40px;
+  width: 360px;
 }
 
 .ycCardVideoContent{
-  width: 360px;
+  
   height: 120px;
+  
 }
 
 .ycCardVideo{
   width:100%;
   height:100%;  
+  
+}
+.ycCardBody{
+  overflow: hidden;
+  padding-left: 24px;
 }
 
+.ycCardTitle{
+  color: var(--yc-main-primary-text-color);
+  text-overflow: ellipsis;
+}
 
-.ycIconSearch{
+.ycVideoAuthor{
+  color: var(--yc-main-secondary-text-color);
+}
+
+.ycCardVideoMetadataInline{
+  font-family: "Roboto","Arial",sans-serif;  
+  line-height: 2rem;
+  font-weight: 400;
+  max-height: 4rem;
+  overflow: hidden;
+  display: block;
+  -webkit-line-clamp: 2;
+  display: box;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;  
+  white-space: normal;
+  display: inline;
+}
+
+.ycCardVideoMetadataPubAgo::before{
+  content: "•";
   font-size: 12px;
-}
-
-main{
-  display:flex;
-  flex-direction: column;
-  align-content: stretch;
+  color: var(--yc-main-secondary-text-color);
+  margin: 0 4px;
 }

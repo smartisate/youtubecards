@@ -16,17 +16,21 @@ const Index = ({shortVideos}) => {
             shortVideos.map(el => (
             <section className="ycCard" key={el.id}>
                 <Link href="/detail">
-                  <a className="ycCardVideoContent">
-                    
-                    <img className="img-responsive ycCardVideo" src={el.short_video}/>
-                    
+                  <a>
+                    <div className="ycCardVideoContent">
+                      <img className="img-responsive ycCardVideo" src={el.short_video}/>
+                    </div>
                   </a>
                 </Link>
-                <div className="card-body">
-                  <h5 className="card-title">{el.title}</h5>              
-                  <p className="card-text">
-                    <small className="text-muted">{el.last_viewed}</small>
-                  </p>
+                <div className="card-body ycCardBody">
+                  <div className="card-title ycCardTitle">{el.title}</div>
+                  <div className="ycVideoAuthor">{el.author}</div>
+                  <span className="ycCardVideoMetadataInline">
+                    <small className="text-muted">{el.metadata_views}</small>
+                  </span>
+                  <span className="ycCardVideoMetadataInline ycCardVideoMetadataPubAgo">
+                    <small className="text-muted">{el.metadata_pub_ago}</small>
+                  </span>
                 </div>
             </section>
             ))
@@ -43,51 +47,66 @@ Index.defaultProps = {
   shortVideos: [
     {
       id:1,
-      title:"Video title 1",
+      title:"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'BRAINY DOSE',
+      metadata_views:'3K',
+      metadata_pub_ago:'1 year ago',
     },
     {
       id:2,
-      title:"Video title 2",
+      title:"Lorem ipsum dolor sit amet",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'David Bombai',
+      metadata_views:'761K',
+      metadata_pub_ago:'1 day ago',      
     },
     {
       id:3,
-      title:"Video title 3",
+      title:"consectetur adipiscing elit",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'Wendover Productions',
+      metadata_views:'261K',
+      metadata_pub_ago:'1 year ago',
     },
     {
       id:4,
-      title:"Video title 4",
+      title:"sed do eiusmod tempor incididunt",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'David Bombai',
+      metadata_views:'1K',
+      metadata_pub_ago:'1 month ago',
     },
     {
       id:5,
-      title:"Video title 5",
+      title:"ut labore et dolore magna aliqua",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'BRAINY DOSE',
+      metadata_views:'261K',
+      metadata_pub_ago:'1 year ago',
     },
     {
       id:6,
-      title:"Video title 6",
+      title:"Lobortis feugiat vivamus at augue eget arcu",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      metadata_views:'3M',
+      metadata_pub_ago:'1 year ago',
     },
     {
       id:7,
-      title:"Video title 7",
+      title:"Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Senectus et netus et malesuada fames ac",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'Think School',
+      metadata_views:'4K',
+      metadata_pub_ago:'1 year ago',
     },
     {
       id:8,
-      title:"Video title 8",
+      title:"Et ultrices neque ornare aenean euismod",
       short_video:"https://semantic-ui.com/images/wireframe/image.png",
-      last_viewed:"Last updated 3 mins ago"
+      author:'BRAINY DOSE',
+      metadata_views:'356',
+      metadata_pub_ago:'1 year ago',
     }
   ]
 };

@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Container from '../components/container';
+import Layout from '../components/Layout';
 
 const Index = (props) => {
-  return (    
+  return (
     <div>
-      <Container>
+      <Layout>
         <div className='d-flex justify-content-center'>
           <div>
             <div>
@@ -22,7 +22,7 @@ const Index = (props) => {
             </ul>
           </div>
         </div>
-      </Container>
+      </Layout>
     </div>
   );
 }
