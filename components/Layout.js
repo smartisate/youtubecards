@@ -12,11 +12,11 @@ const Layout = (props) => {
         <title>Youtube Cards</title>        
       </Head>
 
-      <main>
+      <div>
         <Navigation/>
         <div id="sidebarAndSectionsContainer">
           <div>
-            <div id='sidebarLeft'>            
+            <div id='sidebarLeft'>
               <LeftSidebarButton title="Principal" url="/"/>
               <LeftSidebarButton title="Shorts" url="/"/>
               <LeftSidebarButton title="Suscripciones" url="/"/>
@@ -27,7 +27,7 @@ const Layout = (props) => {
             {props.children}
           </div>
         </div>
-      </main>
+      </div>
     </>
   )
 };

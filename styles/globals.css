@@ -5,8 +5,9 @@
   --yt-spec-badge-chip-background: rgba(0, 0, 0, 0.05);
   --ytd-mini-guide-width:120px;
   --yc-top-position-sticky:56px;
-  --yc-main-content-background-color:#f9f9f9;
+  --yc-main-content-background-color:hsl(0, 0%, 98%);
   --yc-main-secondary-text-color:#6c757d;
+  --sidebar-size:72px;
 }
 
 .ycNavigationContainer{
@@ -20,7 +21,7 @@
   position:sticky;
   top:0px;
   z-index: 1;
-  background-color: white;
+  background-color: white;  
 }
 .ycHamburderLogoCantainer{
   display: flex;
@@ -90,7 +91,7 @@
 
 #searchInput{
   border-radius: 0px !important;
-  width: 409px;
+  min-width: 50px;
   
   margin-right: 0px !important;
 }
@@ -170,42 +171,44 @@
 
 #sidebarAndSectionsContainer #sidebarLeft{
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   position: sticky;
-  
   top: var(--yc-top-position-sticky);
-  z-index: 1;
-  background-color: aquamarine;
+  z-index: 1;  
+  width: var(--sidebar-size);
 }
 
 .leftSidebarButton{
   font-size: 10px !important;
   text-decoration: none !important;
-  width: 72px;
+  width: var(--sidebar-size);
   height: 74px;
   border: none;
   background-color: white;
 }
+#categoriesContainer{  
+  display: flex;  
+  flex-direction: row;
+  justify-content: center;
+  top:var(--yc-top-position-sticky);
+  position: sticky;
+  
+}
 
-#categoriesContainer{
+#categoriesContent{
   border-top: 1px solid var(--ytd-searchbox-legacy-button-border-color);
   border-bottom: 1px solid var(--ytd-searchbox-legacy-button-border-color);  
   padding-top: 7px;
   padding-bottom: 7px;
-  
-  position: sticky;
-  top: var(--yc-top-position-sticky);
-  z-index: 1;
-  background-color: white;
-  
+  background-color: white;  
+  overflow: hidden;
+  height: 67px !important;
+}
 
-  display: flex;
-  justify-content:center;
-}
-#categoriesContainer > div {
+#categoriesContent > div {
   
 }
-.ycCategory{
+.ycBtnCategory{
   margin-top: 12px;
   margin-right: 12px;
   margin-bottom: 12px;
@@ -214,7 +217,8 @@
   border-radius: 15px;
   border: 1px solid var(--ytd-searchbox-legacy-button-border-color);
   background-color: var(--yt-spec-badge-chip-background);  
-  white-space: nowrap;  
+  cursor: pointer;
+  float: left;
 }
 
 main{
@@ -276,7 +280,7 @@ main{
   overflow: hidden;
   display: block;
   -webkit-line-clamp: 2;
-  display: box;
+  display: flex;
   display: -webkit-box;
   -webkit-box-orient: vertical;  
   white-space: normal;
@@ -288,4 +292,55 @@ main{
   font-size: 12px;
   color: var(--yc-main-secondary-text-color);
   margin: 0 4px;
+}
+
+
+/*********************************************/
+@media only screen and (max-width:1200px){
+  .ycCard{    
+    width:344px;
+  }
+}
+@media only screen and (max-width:992px){  
+  .ycCard{    
+    width:275px;
+  }
+}
+@media only screen and (max-width:768px){
+  .ycCard{    
+    width:320px /*  × 167 */
+  }
+  #sidebarLeft{
+    display: none !important;
+  }
+}
+
+
+@media only screen and (max-width:650px){
+  #ycBtnSearchTranslate, #ycBtnSearchTranslateArrowDown, #ycBtnSearchItemSubtitle{
+    display:none;
+  }  
+  
+}
+
+
+@media only screen and (max-width:576px){
+  .ycCard{    
+    width:272px /* × 142 px */
+  }
+}
+@media only screen and (max-width:512px){
+  .ycCard{    
+    width:180px /*  × 126 */
+  }
+}
+
+
+@media only screen and (max-width:425px){
+  .ycCard{
+    width: 250px /* × 167 px */
+  }
+  #ycBtnSearchItemVoice, #searchInput, #userOptionNotifications{
+    display: none;
+  }
 }

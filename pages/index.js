@@ -8,8 +8,10 @@ const Index = ({shortVideos}) => {
 
   return (    
     <>
-      <Layout>        
-        <Categories/>        
+      <Layout>       
+        <div id="categoriesContainer">
+          <Categories/>
+        </div> 
         <div id="mainContainer">
           <div id="mainContainerVideos">
           {

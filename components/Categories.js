@@ -3,13 +3,10 @@ import Link from 'next/link';
 const Categories = ({categories}) => {
   
   return (
-    <div id="categoriesContainer">
+    <div id="categoriesContent">
       {
         categories.map(el => (
-          <div key={el.id}>
-            <button type="button" className="ycCategory">{el.title}</button>
-          </div>
-
+          <div key={el.id} className="ycBtnCategory">{el.title}</div>
         ))
       }
     </div>
