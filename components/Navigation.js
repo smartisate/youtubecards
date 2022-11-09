@@ -8,27 +8,30 @@ const Navigation = () => {
   return (
     <div className="ycNavigationContainer">        
       <div className="ycHamburderLogoCantainer">
-        <button className="ycHamburgerIconContainer">
-          <i className="bi bi-menu-down ycHamburgerMenu"></i>          
+        <button id="btnHamburger" className="ycHamburgerIconContainer">
+          <img src='/hamburger_icon.png' layout={'fixed'} height={20} className="hamburger"/>
         </button>
         <div className="ycLogoContainer">
           <Link href="/">
             <a className="ycLogoLink">
               <div className='ycLogoContent'>
-                <img src='/logo.svg' layout={'fixed'} width={90} height={20} className="ycLogoImage"/>                
+                <img src='/logo.svg' layout={'fixed'} width={90} height={20} className="ycLogoImage"/>
               </div>
               <div className='ycLogoPartCountry'>BO</div>
             </a>
           </Link>
         </div>
       </div>
-      
-
       <Search/>
-
       <User/>
     </div>
   );
+}
+
+const myFunction =() =>{
+  var element = document.getElementById("sideBarLeftExpanded");
+  element.classList.toggle("sideBarLeftExpandedDisplay");
+  console.log("click on hamburger button");
 }
 
 export default Navigation;

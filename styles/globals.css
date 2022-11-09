@@ -62,6 +62,32 @@
   font-size: 24px;
 }
 
+
+.ycSidebarIcon{
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none !important;
+  color: black !important;  
+}
+
+.ycSidebarIconExpanded{
+  margin-left: 5px;
+  float:left;
+}
+
+.ycSidebarBtnText{
+  
+}
+
+.ycSidebarBtnTextExpanded{
+  margin-left: 5px;
+  float:left;
+}
+
+
 .ycLogoPartCountry{  
   margin-left:2px;
   margin-right: 10px;
@@ -153,9 +179,17 @@
   justify-content: center;  
 }
 
+#sidebar{
+  display:none;
+}
+
+.sideBarLeftExpandedDisplay{
+  display: flex !important;
+}
 
 
-.ydUserOptionsIcon{
+
+.ycUserOptionsIcon{
   font-size: 24px;
   width: 40px;
   height: 40px;
@@ -169,7 +203,7 @@
   display: flex;
 }
 
-#sidebarAndSectionsContainer #sidebarLeft{
+#sidebarAndSectionsContainer #sidebar{
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -310,7 +344,7 @@ main{
   .ycCard{    
     width:320px /*  × 167 */
   }
-  #sidebarLeft{
+  #sidebar{
     display: none !important;
   }
 }
@@ -319,8 +353,7 @@ main{
 @media only screen and (max-width:650px){
   #ycBtnSearchTranslate, #ycBtnSearchTranslateArrowDown, #ycBtnSearchItemSubtitle{
     display:none;
-  }  
-  
+  }
 }
 
 

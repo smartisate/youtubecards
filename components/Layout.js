@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navigation from './Navigation';
 import LeftSidebarButton from './LeftSidebarButton';
+import Sidebar from './Sidebar';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
@@ -15,14 +17,7 @@ const Layout = (props) => {
       <div>
         <Navigation/>
         <div id="sidebarAndSectionsContainer">
-          <div>
-            <div id='sidebarLeft'>
-              <LeftSidebarButton title="Principal" url="/"/>
-              <LeftSidebarButton title="Shorts" url="/"/>
-              <LeftSidebarButton title="Suscripciones" url="/"/>
-              <LeftSidebarButton title="Biblioteca" url="/"/>
-            </div>
-          </div>
+          <Sidebar/>
           <div>
             {props.children}
           </div>
