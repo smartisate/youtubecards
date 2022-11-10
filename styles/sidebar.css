@@ -1,0 +1,73 @@
+#sidebar{
+  display:none;
+}
+
+
+.sideBarLeftExpandedDisplay{
+  display: flex !important;
+}
+
+
+.leftSidebarButton{
+  font-size: 10px !important;
+  height: 74px;
+  border: none;
+  background-color: white;
+}
+.leftSidebarButton a, .leftSidebarButton a:hover{
+  text-decoration: none !important;
+  color: black;
+}
+
+.ycSidebarBtnIconCompressed{
+  margin-left: auto;
+  margin-right: auto;
+}
+.ycSidebarBtnIconCompressed, .ycSidebarBtnIconExpanded{
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  color: black !important;
+  border: none !important;
+}
+.ycSidebarBtnIconExpanded{
+  margin-left: 5px;
+  float:left;
+}
+
+.ycSidebarBtnTextCompressed{
+  margin-left: auto;
+  margin-right: auto;  
+}
+.ycSidebarBtnTextCompressed, .ycSidebarBtnTextExpanded{
+  
+}
+.ycSidebarBtnTextExpanded{
+  float:left;
+  font-size: 1.5em;
+}
+
+
+#sidebarAndSectionsContainer{
+  display: flex;
+}
+
+#sidebarAndSectionsContainer #sidebar{
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: var(--yc-top-position-sticky);
+  z-index: 1;  
+  
+}
+
+.sidebarExpanded{
+
+}
+
+.sidebarCompressed{
+  width: var(--sidebar-compressed-size);
+}
+.sidebarExpanded{
+  width: var(--sidebar-expanded-size);
+}

@@ -7,7 +7,8 @@
   --yc-top-position-sticky:56px;
   --yc-main-content-background-color:hsl(0, 0%, 98%);
   --yc-main-secondary-text-color:#6c757d;
-  --sidebar-size:72px;
+  --sidebar-compressed-size:72px;
+  --sidebar-expanded-size: 434px;
 }
 
 .ycNavigationContainer{
@@ -63,31 +64,6 @@
 }
 
 
-.ycSidebarIcon{
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  border: none !important;
-  color: black !important;  
-}
-
-.ycSidebarIconExpanded{
-  margin-left: 5px;
-  float:left;
-}
-
-.ycSidebarBtnText{
-  
-}
-
-.ycSidebarBtnTextExpanded{
-  margin-left: 5px;
-  float:left;
-}
-
-
 .ycLogoPartCountry{  
   margin-left:2px;
   margin-right: 10px;
@@ -95,9 +71,7 @@
   margin-bottom: 0px;  
   color:var(--yc-main-primary-text-color);
   font-size: 10px;
-
-  padding-top: 10px;
-  
+  padding-top: 10px;  
 }
 
 .ycSearchContainer{
@@ -179,13 +153,8 @@
   justify-content: center;  
 }
 
-#sidebar{
-  display:none;
-}
 
-.sideBarLeftExpandedDisplay{
-  display: flex !important;
-}
+
 
 
 
@@ -199,27 +168,8 @@
 }
 
 
-#sidebarAndSectionsContainer{
-  display: flex;
-}
 
-#sidebarAndSectionsContainer #sidebar{
-  display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: var(--yc-top-position-sticky);
-  z-index: 1;  
-  width: var(--sidebar-size);
-}
 
-.leftSidebarButton{
-  font-size: 10px !important;
-  text-decoration: none !important;
-  width: var(--sidebar-size);
-  height: 74px;
-  border: none;
-  background-color: white;
-}
 #categoriesContainer{  
   display: flex;  
   flex-direction: row;

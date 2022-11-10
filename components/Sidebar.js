@@ -30,14 +30,14 @@ const Sidebar = (props) => {
     <>
       {
         displayCompressed ? 
-        <div id='sidebar'>
+        <div id='sidebar' class="sidebarCompressed">
           <LeftSidebarButton title="Principal" url="/"/>
           <LeftSidebarButton title="Shorts" url="/"/>
           <LeftSidebarButton title="Suscripciones" url="/"/>
           <LeftSidebarButton title="Biblioteca" url="/"/>
         </div>
       :
-        <div id='sidebar'>
+        <div id='sidebar' class="sidebarExpanded">
           <LeftSidebarButton title="Principal" expanded={true} url="/"/>
           <LeftSidebarButton title="Shorts" expanded={true} url="/"/>
           <LeftSidebarButton title="Suscripciones" expanded={true} url="/"/>
