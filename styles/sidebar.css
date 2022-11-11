@@ -10,25 +10,44 @@
 
 .leftSidebarButton{
   font-size: 10px !important;
-  height: 74px;
   border: none;
-  background-color: white;
+  border-radius: 10px;  
 }
-.leftSidebarButton a, .leftSidebarButton a:hover{
+
+.sidebarCompressed .leftSidebarButton{
+  
+  height: 72px;
+}
+
+
+.sidebarExpanded .leftSidebarButton{
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+
+
+.leftSidebarButton:hover{
+  background-color: #f2f2f2;
+}
+
+
+
+#sidebarAndSectionsContainer a, #sidebarAndSectionsContainer a:hover{
   text-decoration: none !important;
   color: black;
 }
 
 .ycSidebarBtnIconCompressed{
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto;  
 }
 .ycSidebarBtnIconCompressed, .ycSidebarBtnIconExpanded{
-  font-size: 20px;
-  width: 30px;
-  height: 30px;
+  font-size: 20px;  
   color: black !important;
   border: none !important;
+  text-align: center;
 }
 .ycSidebarBtnIconExpanded{
   margin-left: 5px;
@@ -37,14 +56,16 @@
 
 .ycSidebarBtnTextCompressed{
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
+  text-align: center;
 }
 .ycSidebarBtnTextCompressed, .ycSidebarBtnTextExpanded{
   
 }
 .ycSidebarBtnTextExpanded{
   float:left;
-  font-size: 1.5em;
+  font-size: 1.4em;
+  margin-left: 22px;
 }
 
 

@@ -1,22 +1,22 @@
 import Link from "next/link";
 const LeftSidebarButton = ({ title, expanded }) => {
   return (
-    <div className="leftSidebarButton">
-      <a href="">
-        <div
-          className={`bi bi-house-door-fill  ${
-            expanded ? "ycSidebarBtnIconExpanded" : "ycSidebarBtnIconCompressed"
-          } `}
-        ></div>
-        <div
-          className={`  ${
-            expanded ? "ycSidebarBtnTextExpanded" : "ycSidebarBtnTextCompressed"
-          }`}
-        >
-          {title}
-        </div>
-      </a>
-    </div>
+    <a href="">
+      <div className="leftSidebarButton">
+          <div
+            className={`bi bi-house-door-fill  ${
+              expanded ? "ycSidebarBtnIconExpanded" : "ycSidebarBtnIconCompressed"
+            } `}
+          ></div>
+          <div
+            className={`  ${
+              expanded ? "ycSidebarBtnTextExpanded" : "ycSidebarBtnTextCompressed"
+            }`}
+          >
+            {title}
+          </div>      
+      </div>
+    </a>
   );
 };
 

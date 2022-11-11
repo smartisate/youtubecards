@@ -8,7 +8,7 @@
   --yc-main-content-background-color:hsl(0, 0%, 98%);
   --yc-main-secondary-text-color:#6c757d;
   --sidebar-compressed-size:72px;
-  --sidebar-expanded-size: 434px;
+  --sidebar-expanded-size: 216px;
 }
 
 .ycNavigationContainer{
@@ -180,8 +180,8 @@
 }
 
 #categoriesContent{
-  border-top: 1px solid var(--ytd-searchbox-legacy-button-border-color);
-  border-bottom: 1px solid var(--ytd-searchbox-legacy-button-border-color);  
+  /* border-top: 1px solid var(--ytd-searchbox-legacy-button-border-color);
+  border-bottom: 1px solid var(--ytd-searchbox-legacy-button-border-color);   */
   padding-top: 7px;
   padding-bottom: 7px;
   background-color: white;  
