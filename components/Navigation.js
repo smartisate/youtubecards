@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import Link from 'next/link';
 import Search from './Search';
 import User from './User';
+import SidebarToogleContext from "./context/SidebarToggleContext";
 
 import Image from 'next/image';
 
-const Navigation = ( {handleDisplaySidebar} ) => {
+const Navigation = () => {
+
+  const {handleDisplaySidebar} = useContext(SidebarToogleContext);
+
   return (
     <div className="ycNavigationContainer">        
       <div className="ycHamburderLogoCantainer">
@@ -26,12 +31,6 @@ const Navigation = ( {handleDisplaySidebar} ) => {
       <User/>
     </div>
   );
-}
-
-const myFunction =() =>{
-  var element = document.getElementById("sideBarLeftExpanded");
-  element.classList.toggle("sideBarLeftExpandedDisplay");
-  console.log("click on hamburger button");
 }
 
 export default Navigation;

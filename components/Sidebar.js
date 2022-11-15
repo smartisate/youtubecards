@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import Head from 'next/head';
 import Link from 'next/link';
 import Navigation from './Navigation';
 import LeftSidebarButton from './LeftSidebarButton';
+import SidebarToogleContext from "./context/SidebarToggleContext";
 
-const Sidebar = ( {displayCompressed} ) => {
+const Sidebar = () => {
+
+  const {displayCompressed} = useContext(SidebarToogleContext);
 
   return (
     <>

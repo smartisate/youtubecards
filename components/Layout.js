@@ -9,24 +9,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Layout = (props) => {
-
-  const [displayCompressed, setDisplayCompressed] = useState(true);
-
-  const handleDisplaySidebar = (e) => {
-    setDisplayCompressed( ! displayCompressed );
-    console.log('click in button hamburger');
-  };
-
+  
   return (
     <>
       <Head>
-        <title>Youtube Cards</title>        
+        <title>Youtube Cards</title>
       </Head>
 
       <div>
-        <Navigation handleDisplaySidebar={handleDisplaySidebar}/>
+        <Navigation/>
         <div id="sidebarAndSectionsContainer">
-          <Sidebar displayCompressed={displayCompressed}/>
+          <Sidebar/>
           <div>
             {props.children}
           </div>
