@@ -2,28 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navigation from './Navigation';
 import LeftSidebarButton from './LeftSidebarButton';
-import {useState, useEffect} from 'react';
 
-const Sidebar = (props) => {
-
-  const [displayCompressed, setDisplayCompressed] = useState(true);
-
-  useEffect( () => {
-    console.log("Inicia monitoreo a click");
-
-    const clickDectecting = () => {
-      setDisplayCompressed( ! displayCompressed );
-    }
-    const element = document.getElementById('btnHamburger');
-
-    console.log('add click at mount state');
-    element.addEventListener("click", clickDectecting);
-    return () => {
-      console.log('remove click at unmount state');
-      element.removeEventListener("click", clickDectecting);
-    }
-  },[displayCompressed]);
-
+const Sidebar = ( {displayCompressed} ) => {
 
   return (
     <>

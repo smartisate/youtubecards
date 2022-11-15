@@ -4,11 +4,11 @@ import User from './User';
 
 import Image from 'next/image';
 
-const Navigation = () => {
+const Navigation = ( {handleDisplaySidebar} ) => {
   return (
     <div className="ycNavigationContainer">        
       <div className="ycHamburderLogoCantainer">
-        <button id="btnHamburger" className="ycHamburgerIconContainer">
+        <button id="btnHamburger" className="ycHamburgerIconContainer" onClick={handleDisplaySidebar}>
           <img src='/hamburger_icon.png' layout={'fixed'} height={20} className="hamburger"/>
         </button>
         <div className="ycLogoContainer">
