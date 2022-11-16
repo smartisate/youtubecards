@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +9,9 @@ import {
 } from "../components/context/SidebarToggleContext";
 
 import Layout from "../components/Layout";
+import MyLink from "../components/MyLink";
 
-const Index = ({ shortVideos }) => {
+const Index = ({ shortVideos }) => {  
   return (
     <>
       <SidebarToggleProvider>
@@ -21,16 +23,14 @@ const Index = ({ shortVideos }) => {
             <div id="mainContainerVideos">
               {shortVideos.map((el) => (
                 <section className="ycCard" key={el.id}>
-                  <Link href="/detail">
-                    <a>
+                  <MyLink href="/detail">                    
                       <div className="ycCardVideoContent">
                         <img
                           className="img-responsive ycCardVideo"
                           src={el.short_video}
                         />
                       </div>
-                    </a>
-                  </Link>
+                  </MyLink>
                   <div className="card-body ycCardBody">
                     <div className="card-title ycCardTitle">{el.title}</div>
                     <div className="ycVideoAuthor">{el.author}</div>

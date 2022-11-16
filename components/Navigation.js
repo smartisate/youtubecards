@@ -2,13 +2,13 @@ import { useContext } from "react";
 import Link from 'next/link';
 import Search from './Search';
 import User from './User';
-import SidebarToogleContext from "./context/SidebarToggleContext";
+import SidebarToggleContext from "./context/SidebarToggleContext";
 
 import Image from 'next/image';
 
 const Navigation = () => {
 
-  const {handleDisplaySidebar} = useContext(SidebarToogleContext);
+  const {handleDisplaySidebar} = useContext(SidebarToggleContext);
 
   return (
     <div className="ycNavigationContainer">        
