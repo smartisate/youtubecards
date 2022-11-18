@@ -293,10 +293,7 @@ main{
 @media (max-width:768px){
   .ycCard{    
     width:320px /*  × 167 */
-  }
-  #sidebar{
-    display: none !important;
-  }
+  }  
 }
 
 

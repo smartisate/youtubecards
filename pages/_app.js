@@ -9,26 +9,23 @@ export default function MyApp({ Component, pageProps }) {
   
   const SIDEBAR_DISPLAY = 1;
   const SIDEBAR_COMPRESSED = 2;
-  const SIDEBAR_MODAL_HIDDEN = 1;
-  const SIDEBAR_MODAL_VISIBLE = 2;
-
+  
   const [displaySidebar, setDisplaySidebar] = useState(SIDEBAR_COMPRESSED);
 
   const [modalSidebarEnable, setModalSidebarEnable] = useState(false);
 
-  const [visibilityModalSidebar, setVisibilityModalSidebar] = useState(SIDEBAR_MODAL_HIDDEN);
 
   return (
     <AppContext.Provider
       value={{
         displaySidebar,
         setDisplaySidebar,
-        visibilityModalSidebar,
-        setVisibilityModalSidebar,
+       
+        modalSidebarEnable,
+        setModalSidebarEnable,
+
         SIDEBAR_DISPLAY,
-        SIDEBAR_COMPRESSED,
-        SIDEBAR_MODAL_HIDDEN,
-        SIDEBAR_MODAL_VISIBLE,
+        SIDEBAR_COMPRESSED
       }}
     >
       <Component {...pageProps} />

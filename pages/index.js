@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 
 import Head from "next/head";
 import Image from "next/image";
@@ -16,7 +17,20 @@ const Index = ({ shortVideos }) => {
   const context = useContext(AppContext);
   const router = useRouter();
 
-  
+  useEffect( () => {
+
+    const resizeHandler = e => {
+
+      console.log("target event = "+e.target.matches);
+      context.setModalSidebarEnable(e.target.matches);
+
+    };
+    window.matchMedia("(max-width: 768px)").addEventListener('change', resizeHandler);
+    return () => {
+      console.log("UNMOUNT COMPONENT");
+      window.removeEventListener("change", resizeHandler);
+    };
+  },[]);
 
   return (
     <>

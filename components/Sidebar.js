@@ -1,4 +1,4 @@
-import { useContext,useEffect } from "react";
+import { useContext } from "react";
 import Head from 'next/head';
 import Link from 'next/link';
 import Navigation from './Navigation';
@@ -24,23 +24,12 @@ const Sidebar = () => {
 
   const context = useContext(AppContext);
 
-  useEffect( () => {
 
-  const handler = e => {
-    context.modalSidebarEnable = true;
-    let sidebar = document.getElementById('ycSidebarModalContainer');
-    sidebar.style.display = 'block';
-  };
-  
-  window.matchMedia("(max-width: 768px)").addEventListener('change', handler);
-  
-  }
-  )
 
   return (
     <>
       {
-        context.displaySidebar === context.SIDEBAR_COMPRESSED ? 
+        context.modalSidebarEnable === false && context.displaySidebar === context.SIDEBAR_COMPRESSED ? 
         <div className="ycSidebar sidebarCompressed">
           <LeftSidebarButton title="Principal" url="/"/>
           <LeftSidebarButton title="Shorts" url="/"/>
@@ -48,13 +37,14 @@ const Sidebar = () => {
           <LeftSidebarButton title="Biblioteca" url="/"/>
         </div>
       :
-        <SidebarExpanded/>
+        context.displaySidebar == context.SIDEBAR_DISPLAY ?
+          <SidebarExpanded/>
+          :
+          ''
       }
 
       {
-        context.visibilityModalSidebar === context.SIDEBAR_MODAL_VISIBLE ?
-          ''
-        :
+        context.modalSidebarEnable === true ?
         <>
           <div id="ycSidebarModalContainer" onClick={handleSidebarModal}>
             <div className="ycSidebarModalContent">
@@ -63,6 +53,8 @@ const Sidebar = () => {
             </div>
           </div>
         </>
+        :
+        ''
       }    
     </>
   )

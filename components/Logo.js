@@ -9,6 +9,11 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import AppContext from "../components/AppContext";
 
+const handleSidebarModal = () =>{
+  let sidebar = document.getElementById('ycSidebarModalContainer');
+  sidebar.style.display = 'block';
+};
+
 const Logo = () => {
 
   const context = useContext(AppContext);
@@ -19,16 +24,21 @@ const Logo = () => {
       id="btnHamburger"
       className="ycHamburgerIconContainer"
       onClick={(event) => {
-        
-        if(context.displaySidebar === context.SIDEBAR_DISPLAY){              
-          context.setDisplaySidebar(context.SIDEBAR_COMPRESSED);
+        if(context.modalSidebarEnable === false){
+          if(context.displaySidebar === context.SIDEBAR_DISPLAY){              
+            context.setDisplaySidebar(context.SIDEBAR_COMPRESSED);
+          }
+          else{
+            context.setDisplaySidebar(context.SIDEBAR_DISPLAY);
+          }
         }
-        else{
-          context.setDisplaySidebar(context.SIDEBAR_DISPLAY);
+        else {
+          handleSidebarModal();
         }
 
         
-        console.log("DISPLAY_SIDEBAR =", context.displaySidebar);
+        console.log("DISPLAY_SIDEBAR =", context.displaySidebar, 
+        " MODAL_SIDEBAR_ENABLE = ", context.modalSidebarEnable);
       }}
     >
       <img
