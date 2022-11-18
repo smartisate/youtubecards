@@ -1,38 +1,76 @@
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import Head from 'next/head';
 import Link from 'next/link';
 import Navigation from './Navigation';
 import LeftSidebarButton from './LeftSidebarButton';
-import SidebarToogleContext from "./context/SidebarToggleContext";
+import AppContext from "../components/AppContext";
+import Logo from "./Logo";
+
+const SidebarExpanded = () => {
+  return (
+    <div className="ycSidebar sidebarExpanded">
+      <LeftSidebarButton title="Principal" expanded={true} url="/"/>
+      <LeftSidebarButton title="Shorts" expanded={true} url="/"/>
+      <LeftSidebarButton title="Suscripciones" expanded={true} url="/"/>
+      <LeftSidebarButton title="Library" expanded={true} url="/"/>
+      <LeftSidebarButton title="History" expanded={true} url="/"/>
+      <LeftSidebarButton title="Watch later" expanded={true} url="/"/>
+    </div>
+  );
+};
+
 
 const Sidebar = () => {
 
-  const {displayCompressed} = useContext(SidebarToogleContext);
+  const context = useContext(AppContext);
+
+  useEffect( () => {
+
+  const handler = e => {
+    context.modalSidebarEnable = true;
+    let sidebar = document.getElementById('ycSidebarModalContainer');
+    sidebar.style.display = 'block';
+  };
+  
+  window.matchMedia("(max-width: 768px)").addEventListener('change', handler);
+  
+  }
+  )
 
   return (
     <>
-      <div>
       {
-        displayCompressed ? 
-        <div id='sidebar' className="sidebarCompressed">
+        context.displaySidebar === context.SIDEBAR_COMPRESSED ? 
+        <div className="ycSidebar sidebarCompressed">
           <LeftSidebarButton title="Principal" url="/"/>
           <LeftSidebarButton title="Shorts" url="/"/>
           <LeftSidebarButton title="Suscripciones" url="/"/>
           <LeftSidebarButton title="Biblioteca" url="/"/>
         </div>
       :
-        <div id='sidebar' className="sidebarExpanded">
-          <LeftSidebarButton title="Principal" expanded={true} url="/"/>
-          <LeftSidebarButton title="Shorts" expanded={true} url="/"/>
-          <LeftSidebarButton title="Suscripciones" expanded={true} url="/"/>
-          <LeftSidebarButton title="Library" expanded={true} url="/"/>
-          <LeftSidebarButton title="History" expanded={true} url="/"/>
-          <LeftSidebarButton title="Watch later" expanded={true} url="/"/>
-      </div>
+        <SidebarExpanded/>
       }
-    </div>
+
+      {
+        context.visibilityModalSidebar === context.SIDEBAR_MODAL_VISIBLE ?
+          ''
+        :
+        <>
+          <div id="ycSidebarModalContainer" onClick={handleSidebarModal}>
+            <div className="ycSidebarModalContent">
+              <Logo/>
+              <SidebarExpanded/>
+            </div>
+          </div>
+        </>
+      }    
     </>
   )
+};
+
+const handleSidebarModal = () =>{
+  let sidebar = document.getElementById('ycSidebarModalContainer');
+  sidebar.style.display = 'none';
 };
 
 export default Sidebar;

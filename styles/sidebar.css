@@ -1,4 +1,4 @@
-#sidebar{
+.ycSidebar{
   display:none;
 }
 
@@ -14,8 +14,7 @@
   border-radius: 10px;  
 }
 
-.sidebarCompressed .leftSidebarButton{
-  
+.sidebarCompressed .leftSidebarButton{  
   height: 72px;
 }
 
@@ -73,7 +72,7 @@
   display: flex;
 }
 
-#sidebarAndSectionsContainer #sidebar{
+#sidebarAndSectionsContainer .ycSidebar{
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -82,13 +81,32 @@
   
 }
 
-.sidebarExpanded{
-
-}
-
 .sidebarCompressed{
   width: var(--sidebar-compressed-size);
 }
 .sidebarExpanded{
+  width: var(--sidebar-expanded-size);
+}
+
+
+#ycSidebarModalContainer {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.ycSidebarModalContent {
+  
+  background-color: #fefefe;
+  position:absolute;
+  margin: auto;  
+  border: 1px solid #888;
   width: var(--sidebar-expanded-size);
 }

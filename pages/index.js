@@ -1,20 +1,26 @@
 import { useContext } from "react";
+import { useState } from "react";
+
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Categories from "../components/Categories";
-import {
-  SidebarToggleContext,
-  SidebarToggleProvider,
-} from "../components/context/SidebarToggleContext";
 
 import Layout from "../components/Layout";
-import MyLink from "../components/MyLink";
+
+import { useRouter } from "next/router";
+import AppContext from "../components/AppContext"
 
 const Index = ({ shortVideos }) => {  
+
+  const context = useContext(AppContext);
+  const router = useRouter();
+
+  
+
   return (
     <>
-      <SidebarToggleProvider>
+      
         <Layout>
           <div id="categoriesContainer">
             <Categories />
@@ -23,14 +29,19 @@ const Index = ({ shortVideos }) => {
             <div id="mainContainerVideos">
               {shortVideos.map((el) => (
                 <section className="ycCard" key={el.id}>
-                  <MyLink href="/detail">                    
+                  
+                    <a onClick={() => {
+                          context.setDisplaySidebar(context.SIDEBAR_DISPLAY);
+                          router.push('/detail')
+                      }}>
                       <div className="ycCardVideoContent">
                         <img
                           className="img-responsive ycCardVideo"
                           src={el.short_video}
                         />
                       </div>
-                  </MyLink>
+                    </a>
+                  
                   <div className="card-body ycCardBody">
                     <div className="card-title ycCardTitle">{el.title}</div>
                     <div className="ycVideoAuthor">{el.author}</div>
@@ -47,8 +58,7 @@ const Index = ({ shortVideos }) => {
               ))}
             </div>
           </div>
-        </Layout>
-      </SidebarToggleProvider>
+        </Layout>      
     </>
   );
 };

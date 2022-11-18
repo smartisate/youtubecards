@@ -1,39 +1,41 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Layout from '../components/Layout';
+import Head from "next/head";
+import Link from "next/link";
+import Layout from "../components/Layout";
 
-import {
-  SidebarToggleContext,
-  SidebarToggleProvider,
-} from "../components/context/SidebarToggleContext";
-
+import { useContext } from "react";
+import AppContext from "../components/AppContext";
 
 const Detail = () => {
+  const context = useContext(AppContext);
+
   return (
     <>
-      <SidebarToggleProvider>
-        <Layout>
-          <div className='d-flex justify-content-center'>
+      <Layout>
+        <div className="d-flex justify-content-center">
+          <div>
             <div>
-              <div>
-                <img src="https://semantic-ui.com/images/wireframe/image.png" className="img-fluid" alt="Responsive image"/>
-              </div>
-            </div>
-            <div>
-              <ul className="list-group">
-                <li className="list-group-item">Cras justo odio</li>
-                <li className="list-group-item">Dapibus ac facilisis in</li>
-                <li className="list-group-item">Morbi leo risus</li>
-                <li className="list-group-item">Porta ac consectetur ac</li>
-                <li className="list-group-item">Vestibulum at eros</li>
-              </ul>
+              <img
+                src="https://semantic-ui.com/images/wireframe/image.png"
+                className="img-fluid"
+              />
             </div>
           </div>
-        </Layout>
-      </SidebarToggleProvider>
+          <div>
+            <ul className="list-group">
+              <li className="list-group-item">
+                {"DISPLAY_SIDEBAR=" + context.displaySidebar}
+              </li>
+              <li className="list-group-item">Cras justo odio</li>
+              <li className="list-group-item">Dapibus ac facilisis in</li>
+              <li className="list-group-item">Morbi leo risus</li>
+              <li className="list-group-item">Porta ac consectetur ac</li>
+              <li className="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
+        </div>
+      </Layout>
     </>
   );
-}
+};
 
-
-export default Detail
+export default Detail;
