@@ -11,7 +11,7 @@ import AppContext from "../components/AppContext";
 
 const handleSidebarModal = () =>{
   let sidebar = document.getElementById('ycSidebarModalContainer');
-  sidebar.style.display = 'block';
+  sidebar.style.display = 'flex';
 };
 
 const Logo = () => {
@@ -25,11 +25,11 @@ const Logo = () => {
       className="ycHamburgerIconContainer"
       onClick={(event) => {
         if(context.modalSidebarEnable === false){
-          if(context.displaySidebar === context.SIDEBAR_DISPLAY){              
-            context.setDisplaySidebar(context.SIDEBAR_COMPRESSED);
+          if(context.displaySidebarCompressed === false){
+            context.setDisplaySidebarCompressed(true);
           }
           else{
-            context.setDisplaySidebar(context.SIDEBAR_DISPLAY);
+            context.setDisplaySidebarCompressed(false);
           }
         }
         else {
@@ -37,7 +37,7 @@ const Logo = () => {
         }
 
         
-        console.log("DISPLAY_SIDEBAR =", context.displaySidebar, 
+        console.log("DISPLAY_SIDEBAR =", context.displaySidebarCompressed, 
         " MODAL_SIDEBAR_ENABLE = ", context.modalSidebarEnable);
       }}
     >

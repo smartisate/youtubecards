@@ -19,45 +19,57 @@ const SidebarExpanded = () => {
   );
 };
 
+const SidebarCompressed = () => {
+  return (
+    <div className="ycSidebar sidebarCompressed">
+      <LeftSidebarButton title="Principal" url="/"/>
+      <LeftSidebarButton title="Shorts" url="/"/>
+      <LeftSidebarButton title="Suscripciones" url="/"/>
+      <LeftSidebarButton title="Library" url="/"/>
+      <LeftSidebarButton title="History" url="/"/>
+      <LeftSidebarButton title="Watch later" url="/"/>
+    </div>
+  );
+};
+
+const SidebarModal = () => {
+  return (
+    <div id="ycSidebarModalContainer" onClick={handleSidebarModal}>
+        <div className="ycSidebarModalContent">
+          <Logo/>
+        <SidebarExpanded/>
+      </div>
+    </div>
+  );
+};
 
 const Sidebar = () => {
 
   const context = useContext(AppContext);
 
+  if(context.modalSidebarEnable === false){
+    if(context.displaySidebarCompressed === true){
+      return (<SidebarCompressed/>);
+    }
+    else{
+      return (<SidebarExpanded/>);
+    }
+  }
+  else {
 
-
-  return (
-    <>
-      {
-        context.modalSidebarEnable === false && context.displaySidebar === context.SIDEBAR_COMPRESSED ? 
-        <div className="ycSidebar sidebarCompressed">
-          <LeftSidebarButton title="Principal" url="/"/>
-          <LeftSidebarButton title="Shorts" url="/"/>
-          <LeftSidebarButton title="Suscripciones" url="/"/>
-          <LeftSidebarButton title="Biblioteca" url="/"/>
-        </div>
-      :
-        context.displaySidebar == context.SIDEBAR_DISPLAY ?
-          <SidebarExpanded/>
-          :
-          ''
-      }
-
-      {
-        context.modalSidebarEnable === true ?
-        <>
-          <div id="ycSidebarModalContainer" onClick={handleSidebarModal}>
-            <div className="ycSidebarModalContent">
-              <Logo/>
-              <SidebarExpanded/>
-            </div>
-          </div>
-        </>
-        :
-        ''
-      }    
-    </>
-  )
+    if(context.displaySidebarCompressed === true){
+      return (<>
+        <SidebarCompressed/>
+        <SidebarModal/>
+      </>);
+    }
+    else{
+      return (<>
+      <SidebarExpanded/>
+      <SidebarModal/>
+      </>);
+    }
+  }
 };
 
 const handleSidebarModal = () =>{

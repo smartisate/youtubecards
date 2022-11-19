@@ -19,16 +19,24 @@ const Index = ({ shortVideos }) => {
 
   useEffect( () => {
 
-    const resizeHandler = e => {
-
-      console.log("target event = "+e.target.matches);
-      context.setModalSidebarEnable(e.target.matches);
-
+    const resizeHandler768 = e => {
+      console.log("target event (max-width: 768px) = "+e.target.matches);
+      context.setModalSidebarEnable( e.target.matches );
+      context.setDisplaySidebarCompressed( true );
     };
-    window.matchMedia("(max-width: 768px)").addEventListener('change', resizeHandler);
+    window.matchMedia("(max-width: 768px)").addEventListener('change', resizeHandler768);
+
+    const resizeHandler1200 = e => {
+      console.log("target event (min-width: 1201px) = "+e.target.matches);
+      context.setDisplaySidebarCompressed( false );
+      context.setModalSidebarEnable( ! e.target.matches );
+    };
+    window.matchMedia("(min-width:1201px)").addEventListener('change', resizeHandler1200);
+
     return () => {
       console.log("UNMOUNT COMPONENT");
-      window.removeEventListener("change", resizeHandler);
+      window.removeEventListener("change", resizeHandler768);
+      window.removeEventListener("change", resizeHandler1200);
     };
   },[]);
 
@@ -45,7 +53,7 @@ const Index = ({ shortVideos }) => {
                 <section className="ycCard" key={el.id}>
                   
                     <a onClick={() => {
-                          context.setDisplaySidebar(context.SIDEBAR_DISPLAY);
+                          context.setDisplaySidebarCompressed(false);
                           router.push('/detail')
                       }}>
                       <div className="ycCardVideoContent">

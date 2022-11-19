@@ -7,10 +7,7 @@ import { useState } from "react";
 // This default export is required in a new `pages/_app.js` file.
 export default function MyApp({ Component, pageProps }) {
   
-  const SIDEBAR_DISPLAY = 1;
-  const SIDEBAR_COMPRESSED = 2;
-  
-  const [displaySidebar, setDisplaySidebar] = useState(SIDEBAR_COMPRESSED);
+  const [displaySidebarCompressed, setDisplaySidebarCompressed] = useState(false);
 
   const [modalSidebarEnable, setModalSidebarEnable] = useState(false);
 
@@ -18,14 +15,11 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <AppContext.Provider
       value={{
-        displaySidebar,
-        setDisplaySidebar,
+        displaySidebarCompressed,
+        setDisplaySidebarCompressed,
        
         modalSidebarEnable,
         setModalSidebarEnable,
-
-        SIDEBAR_DISPLAY,
-        SIDEBAR_COMPRESSED
       }}
     >
       <Component {...pageProps} />
